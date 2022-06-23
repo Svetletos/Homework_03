@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Baba C++</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+            
+            alert("Мазе бот v1 на Вашите услуги");
+
+            let guestFirstName = prompt("Въведете собствено име");
+            let guestSecondName = prompt("Въведете фамилия");
+            let guestAge = prompt("Въведете възраст");
+            let guestGender = prompt("Въведете пол");
+
+            console.log(`Собствено име: ${guestFirstName}`);
+            console.log(`Фамилия: ${guestSecondName}`);
+            console.log(`Възраст: ${guestAge}`);
+            console.log(`Пол: ${guestGender}`);
+
+            let isGuestMale = guestGender =="мъж";
+            let isGuestFemale = guestGender =="жена";
+
+            let isGuestUnderage = guestAge <18;
+            let isGuestAdult = guestAge >=18;
+            let guessID = Math.floor((Math.random() * 100) + 1);
+
+            if (isGuestMale && isGuestAdult) {
+                console.log(`Здравейте, г-н ${guestSecondName}`);
+            }
+            else if(isGuestFemale && isGuestAdult) {
+
+              console.log(`Здравейте, г-жо ${guestSecondName}`);
+            }
+            else if(isGuestMale && isGuestUnderage) {
+              console.log(`Здрасти малкия, не пускаме дечица тука - бягай за бира`);
+            }
+            else if(isGuestFemale && isGuestUnderage) {
+              console.log(`Здрасти малката, не пускаме дечица тука - отивай да играеш`);
+            }
+
+            alert(`Добре дошли в мазето на баба ${guestFirstName} ${guestSecondName}`);
+            alert(`Идентифицирахте се с номер ${guessID}`);
+            alert(`Вие сте на ${guestAge}`);
+            
+            let appleWine = "Ябълково вино";
+            let quantityAppleWine = "10";
+            let smokedMeat = "Пушено месо";
+            let quantitySmokedMeat = "5";
+            let plumJam = "Сливов мармалад";
+            let quantityPlumJam = "9";
+            let picklePeppers = "Мариновани чушки";
+            let quantityPicklePeppers = "4";
+            let piggyBank = "Прасенце касичка";
+            let quantityPiggyBank = "184,35 лева";
+            
+            let itemIdAppleWine = (`C7544_${quantityAppleWine}`);
+            let itemIdSmokedMeat = (`M7441_${quantitySmokedMeat}`);
+            let itemIdPlumJam = (`S6491_${quantityPlumJam}`);
+            let itemIdPicklePeppers = (`P7485_${quantityPicklePeppers}`);
+            let itemIdPiggyBank = (`B6584_${quantityPiggyBank}`);
+
+            alert(`Отчет за продуктите в мазето`)
+
+            const wine = {Артикул:`${appleWine}`, Количество:`${quantityAppleWine}`, Код_Артикул:`${itemIdAppleWine}`}
+            const meat = {Артикул:`${smokedMeat}`, Количество:`${quantitySmokedMeat}`, Код_Артикул:`${itemIdSmokedMeat}`};
+            const jam = {Артикул:`${plumJam}`, Количество:`${quantityPlumJam}`, Код_Артикул:`${itemIdPlumJam}`};
+            const peppers = {Артикул:`${picklePeppers}`, Количество:`${quantityPicklePeppers}`, Код_Артикул:`${itemIdPicklePeppers}`};
+            const bank = {Артикул:`${piggyBank}`, Количество:`${quantityPiggyBank}`, Код_Артикул:`${itemIdPiggyBank}`};
+           
+            console.table([wine, meat, jam, peppers, bank]);
+            
+            
+            let donationQuestion
+            
+            if (isGuestAdult) {
+            donationQuestion = prompt (`Желаете ли да дарите? Да/Не`) 
+            }
+
+            let donationAnswerYes = donationQuestion == "да";
+            let donationAnswerNo = donationQuestion == "не";
+            
+           if (donationAnswerYes) {
+            alert(`Щедростта е дар, който принадлежи на душата!`);
+            let donation = prompt(`Моля въведете сума:`);
+            let donationVat = (+donation + (0.2* +donation)); 
+            alert(`Дарение с включен 20% данък: ${donationVat}`);
+          }
+
+           else  if (donationAnswerNo) {
+            alert(`Дано не ти се наложи и на теб!`);
+          }
+          
+        </script>
+    </body>
